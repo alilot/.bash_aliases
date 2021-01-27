@@ -174,6 +174,7 @@ alias established='netstat -an -p tcp | grep ESTABLISHED'
 alias flushdns='sudo dscacheutil -flushcache'
 alias gCO='gCo $(gCl)'
 alias gCT='gCt $(gCl)'
+#alias gl='git log --graph --abbrev-commit --date=relative --decorate --pretty=\"format:\'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\'\" \"$count\" \"$@\"'
 alias grepr='grep -R'
 alias h='history 25'
 alias history='fc -l 1'
@@ -395,4 +396,11 @@ alias yup='yarn upgrade'
 alias yv='yarn version'
 alias yw='yarn workspace'
 alias yws='yarn workspaces'
-alias 
+
+# function for git log
+function gl(){
+count=-10
+git log --graph --abbrev-commit --date=relative --decorate --pretty="format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'" "$count" "$@"
+}
+
+
